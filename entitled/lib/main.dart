@@ -84,12 +84,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.only(top: 70.0),
                     child: Text(
                       'FFXIV Gear Finder',
-                      style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold, color: Colors.indigo
-                      ),
+                      style: TextStyle(
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.indigo),
                     ),
                   ),
                 ),
-                
                 Expanded(
                   flex: 1,
                   child: Padding(

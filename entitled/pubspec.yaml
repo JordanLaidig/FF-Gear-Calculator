@@ -17,8 +17,17 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  http: ^0.12.0+4
+  flutter_launcher_icons: ^0.7.4
+
   flutter:
     sdk: flutter
+
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/000000/000119.png"
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -44,6 +53,29 @@ flutter:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
     - assets/113000/
+    - assets/000000/
+    - assets/i/030000/
+    - assets/i/031000/
+    - assets/i/032000/
+    - assets/i/033000/
+    - assets/i/034000/
+    - assets/i/035000/
+    - assets/i/036000/
+    - assets/i/038000/
+    - assets/i/039000/
+    - assets/i/040000/
+    - assets/i/041000/
+    - assets/i/042000/
+    - assets/i/043000/
+    - assets/i/044000/
+    - assets/i/045000/
+    - assets/i/046000/
+    - assets/i/047000/
+    - assets/i/048000/
+    - assets/i/049000/
+    - assets/i/054000/
+    - assets/i/056000/
+    - assets/i/057000/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
