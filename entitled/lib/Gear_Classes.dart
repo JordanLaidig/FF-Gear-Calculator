@@ -588,33 +588,77 @@ class EquipSlotCategory {
       this.wrists});
 
   EquipSlotCategory.fromJson(Map<String, dynamic> json) {
-    body = json['Body'];
-    ears = json['Ears'];
+    if (json['Body'] != "-1") {
+      body = json['Body'];
+    } else {
+      body = 0;
+    }
+    if (json['Ears'] != "-1") {
+      ears = json['Ears'];
+    } else {
+      ears = 0;
+    }
     if (json['Feet'] != "-1") {
       feet = json['Feet'];
     } else {
       feet = 0;
     }
-    fingerL = json['FingerL'];
-    fingerR = json['FingerR'];
-    gloves = json['Gloves'];
+    if (json['FingerL'] != "-1") {
+      fingerL = json['FingerL'];
+    } else {
+      fingerL = 0;
+    }
+    if (json['FingerR'] != "-1") {
+      fingerR = json['FingerR'];
+    } else {
+      fingerR = 0;
+    }
+    if (json['Gloves'] != "-1") {
+      gloves = json['Gloves'];
+    } else {
+      gloves = 0;
+    }
     if (json['Head'] != "-1") {
       head = json['Head'];
     } else {
       head = 0;
     }
     iD = json['ID'];
-    legs = json['Legs'];
-    mainHand = json['MainHand'];
-    neck = json['Neck'];
+    if (json['Legs'] != "-1") {
+      legs = json['Legs'];
+    } else {
+      legs = 0;
+    }
+    if (json['MainHand'] != "-1") {
+      mainHand = json['MainHand'];
+    } else {
+      mainHand = 0;
+    }
+    if (json['Neck'] != "-1") {
+      neck = json['Neck'];
+    } else {
+      neck = 0;
+    }
     if (json['OffHand'] != "-1") {
       offHand = json['OffHand'];
     } else {
       offHand = 0;
     }
-    soulCrystal = json['SoulCrystal'];
-    waist = json['Waist'];
-    wrists = json['Wrists'];
+    if (json['SoulCrystal'] != "-1") {
+      soulCrystal = json['SoulCrystal'];
+    } else {
+      soulCrystal = 0;
+    }
+    if (json['Waist'] != "-1") {
+      waist = json['Waist'];
+    } else {
+      waist = 0;
+    }
+    if (json['Wrists'] != "-1") {
+      wrists = json['Wrists'];
+    } else {
+      wrists = 0;
+    }
   }
 
   Map<String, dynamic> toJson() {
@@ -816,7 +860,7 @@ Widget buildDamageParameter(ItemData data) {
     return Text(
       "Block Strength",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -824,7 +868,7 @@ Widget buildDamageParameter(ItemData data) {
     return Text(
       "Defense",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -832,7 +876,7 @@ Widget buildDamageParameter(ItemData data) {
     return Text(
       "Physical Strength",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -840,7 +884,7 @@ Widget buildDamageParameter(ItemData data) {
     return Text(
       "Magic Damage",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -852,7 +896,7 @@ Widget buildDamageParameterStat(ItemData data) {
     return Text(
       "${data.block}",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -860,7 +904,7 @@ Widget buildDamageParameterStat(ItemData data) {
     return Text(
       "${data.defensePhys}",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -868,7 +912,7 @@ Widget buildDamageParameterStat(ItemData data) {
     return Text(
       "${data.damagePhys}",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -876,7 +920,7 @@ Widget buildDamageParameterStat(ItemData data) {
     return Text(
       "${data.damageMag}",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -888,7 +932,7 @@ Widget buildDefenseParameter(ItemData data) {
     return Text(
       "Block Rate",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -896,7 +940,7 @@ Widget buildDefenseParameter(ItemData data) {
     return Text(
       "Magic Defense",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -904,7 +948,7 @@ Widget buildDefenseParameter(ItemData data) {
     return Text(
       "Delay",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -916,7 +960,7 @@ Widget buildDefenseParameterStat(ItemData data) {
     return Text(
       "${data.blockRate}",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -924,7 +968,7 @@ Widget buildDefenseParameterStat(ItemData data) {
     return Text(
       "${data.defenseMag}",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
@@ -932,73 +976,70 @@ Widget buildDefenseParameterStat(ItemData data) {
     return Text(
       "${data.delayMs / 1000.0}",
       style: TextStyle(
-        color: Colors.indigo,
+        color: Colors.black,
         fontSize: 20,
       ),
     );
   }
 }
 
-Widget buildMainStat(ItemData data) {
-  if (data.stats.strength != null) {
-    return Text(
-      "Strength +${data.stats.strength.nQ}",
-      style: TextStyle(
-        color: Colors.indigo,
-        fontSize: 20,
-      ),
-    );
-  } else if (data.stats.dexterity != null) {
-    return Text(
-      "Dexterity +${data.stats.dexterity.nQ}",
-      style: TextStyle(
-        color: Colors.indigo,
-        fontSize: 20,
-      ),
-    );
-  } else if (data.stats.intelligence != null) {
-    return Text(
-      "Intelligence +${data.stats.intelligence.nQ}",
-      style: TextStyle(
-        color: Colors.indigo,
-        fontSize: 20,
-      ),
-    );
-  } else {
-    return Text(
-      "Mind +${data.stats.mind.nQ}",
-      style: TextStyle(
-        color: Colors.indigo,
-        fontSize: 20,
-      ),
-    );
+String buildMainStat(ItemData data, String counted) {
+  if(data.stats != null) {
+    if (data.stats.strength != null && !counted.contains("Strength")) {
+      counted = "Strength";
+      return "Strength +${data.stats.strength.nQ}";
+    } else if (data.stats.dexterity != null && !counted.contains("Dexterity")) {
+      counted = "Dexterity";
+      return "Dexterity +${data.stats.dexterity.nQ}";
+    } else
+    if (data.stats.intelligence != null && !counted.contains("Intelligence")) {
+      counted = "Intelligence";
+      return "Intelligence +${data.stats.intelligence.nQ}";
+    } else if (data.stats.mind != null && !counted.contains("Mind")) {
+      counted = "Mind";
+      return "Mind +${data.stats.mind.nQ}";
+    } else if (data.stats.vitality != null && !counted.contains("Vitality")) {
+      counted = "Vitality";
+      return "Vitality +${data.stats.vitality.nQ}";
+    } else {
+      return "";
+    }
+  }else{
+    return "";
   }
 }
 
 String buildSubStat(ItemData data, String counted) {
-  if (data.stats.criticalHit != null && !counted.contains("Critical Hit")) {
-    counted = "Critical Hit";
-    return "Critical Hit +${data.stats.criticalHit.nQ}";
-  } else if (data.stats.determination != null &&
-      !counted.contains("Determination")) {
-    counted = "Determination";
-    return "Determination +${data.stats.determination.nQ}";
-  } else if (data.stats.directHitRate != null &&
-      !counted.contains("Direct Hit Rate")) {
-    counted = "Direct Hit Rate";
-    return "Direct Hit Rate +${data.stats.directHitRate.nQ}";
-  } else if (data.stats.skillSpeed != null &&
-      !counted.contains("Skill Speed")) {
-    counted = "Skill Speed";
-    return "Skill Speed +${data.stats.skillSpeed.nQ}";
-  } else if (data.stats.spellSpeed != null &&
-      !counted.contains("Spell Speed")) {
-    counted = "Spell Speed";
-    return "Spell Speed +${data.stats.spellSpeed.nQ}";
-  } else if (data.stats.tenacity != null && !counted.contains("Tenacity")) {
-    counted = "Tenacity";
-    return "Tenacity +${data.stats.tenacity.nQ}";
-  } else {
-    return "Piety +${data.stats.piety.nQ}";
+  if(data.stats != null) {
+    if (data.stats.criticalHit != null && !counted.contains("Critical Hit")) {
+      counted = "Critical Hit";
+      return "Critical Hit +${data.stats.criticalHit.nQ}";
+    } else if (data.stats.determination != null &&
+        !counted.contains("Determination")) {
+      counted = "Determination";
+      return "Determination +${data.stats.determination.nQ}";
+    } else if (data.stats.directHitRate != null &&
+        !counted.contains("Direct Hit Rate")) {
+      counted = "Direct Hit Rate";
+      return "Direct Hit Rate +${data.stats.directHitRate.nQ}";
+    } else if (data.stats.skillSpeed != null &&
+        !counted.contains("Skill Speed")) {
+      counted = "Skill Speed";
+      return "Skill Speed +${data.stats.skillSpeed.nQ}";
+    } else if (data.stats.spellSpeed != null &&
+        !counted.contains("Spell Speed")) {
+      counted = "Spell Speed";
+      return "Spell Speed +${data.stats.spellSpeed.nQ}";
+    } else if (data.stats.tenacity != null && !counted.contains("Tenacity")) {
+      counted = "Tenacity";
+      return "Tenacity +${data.stats.tenacity.nQ}";
+    } else if (data.stats.piety != null && !counted.contains("Piety")) {
+      counted = "Piety";
+      return "Piety +${data.stats.piety.nQ}";
+    } else {
+      return "";
+    }
+  }else{
+    return "";
   }
 }

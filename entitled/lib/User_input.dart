@@ -27,7 +27,7 @@ class _GearSelectionState extends State<GearSelection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.deepPurpleAccent,
         title: Text(widget.title),

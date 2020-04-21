@@ -42,7 +42,7 @@ class _GearDataState extends State<GearData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.deepPurpleAccent,
         title: Text(widget.title),
@@ -91,7 +91,7 @@ class _GearDataState extends State<GearData> {
                                   child: Text(
                                     "Unique",
                                     style: TextStyle(
-                                      color: Colors.indigo,
+                                      color: Colors.black,
                                       fontSize: 20,
                                     ),
                                   ),
@@ -108,7 +108,7 @@ class _GearDataState extends State<GearData> {
                                   child: Text(
                                     "Untradeable",
                                     style: TextStyle(
-                                      color: Colors.indigo,
+                                      color: Colors.black,
                                       fontSize: 20,
                                     ),
                                   ),
@@ -126,7 +126,7 @@ class _GearDataState extends State<GearData> {
                             child: Text(
                               snapshot.data.name,
                               style: TextStyle(
-                                color: Colors.indigo,
+                                color: Colors.black,
                                 fontSize: 20,
                               ),
                               overflow: TextOverflow.ellipsis,
@@ -138,7 +138,7 @@ class _GearDataState extends State<GearData> {
                             child: Text(
                               snapshot.data.itemUICategory.name,
                               style: TextStyle(
-                                color: Colors.indigo,
+                                color: Colors.black,
                                 fontSize: 20,
                               ),
                             ),
@@ -154,7 +154,7 @@ class _GearDataState extends State<GearData> {
                     child: Text(
                       "Item Level ${snapshot.data.levelItem}",
                       style: TextStyle(
-                        color: Colors.indigo,
+                        color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
@@ -200,7 +200,7 @@ class _GearDataState extends State<GearData> {
                     child: Text(
                       "${snapshot.data.classJobCategory.name}",
                       style: TextStyle(
-                        color: Colors.indigo,
+                        color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
@@ -210,7 +210,7 @@ class _GearDataState extends State<GearData> {
                     child: Text(
                       "Lv ${snapshot.data.levelEquip}",
                       style: TextStyle(
-                        color: Colors.indigo,
+                        color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
@@ -224,7 +224,7 @@ class _GearDataState extends State<GearData> {
                         child: Text(
                           "Bonuses",
                           style: TextStyle(
-                            color: Colors.indigo,
+                            color: Colors.black,
                             fontSize: 20,
                           ),
                         ),
@@ -235,18 +235,25 @@ class _GearDataState extends State<GearData> {
                           Padding(
                             padding:
                                 const EdgeInsets.only(top: 5.0, right: 10.0),
-                            child: buildMainStat(snapshot.data),
-                          ),
+                            child: Text(
+                              (widget.counted = buildMainStat(
+                                  snapshot.data, widget.counted)),
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
+                            )),
                           Padding(
                             padding:
                                 const EdgeInsets.only(top: 5.0, left: 10.0),
                             child: Text(
-                              "Vitality +${snapshot.data.stats.vitality.nQ}",
+                              (widget.counted = buildMainStat(
+                                  snapshot.data, widget.counted)),
                               style: TextStyle(
-                                color: Colors.indigo,
+                                color: Colors.black,
                                 fontSize: 20,
                               ),
-                            ),
+                            )
                           ),
                         ],
                       ),
@@ -260,7 +267,7 @@ class _GearDataState extends State<GearData> {
                                 (widget.counted = buildSubStat(
                                     snapshot.data, widget.counted)),
                                 style: TextStyle(
-                                  color: Colors.indigo,
+                                  color: Colors.black,
                                   fontSize: 20,
                                 ),
                               )),
@@ -270,7 +277,7 @@ class _GearDataState extends State<GearData> {
                               child: Text(
                                 buildSubStat(snapshot.data, widget.counted),
                                 style: TextStyle(
-                                  color: Colors.indigo,
+                                  color: Colors.black,
                                   fontSize: 20,
                                 ),
                               )),
@@ -287,7 +294,7 @@ class _GearDataState extends State<GearData> {
                         child: Text(
                           "Materia Slots: ${snapshot.data.materiaSlotCount}",
                           style: TextStyle(
-                            color: Colors.indigo,
+                            color: Colors.black,
                             fontSize: 20,
                           ),
                         ),
@@ -299,7 +306,7 @@ class _GearDataState extends State<GearData> {
                           "HQ possible: " +
                               ((snapshot.data.canBeHq == 1) ? "Yes" : "No"),
                           style: TextStyle(
-                            color: Colors.indigo,
+                            color: Colors.black,
                             fontSize: 20,
                           ),
                         ),
@@ -313,7 +320,7 @@ class _GearDataState extends State<GearData> {
                       "Able to be discarded: " +
                           ((snapshot.data.isIndisposable == 0) ? "Yes" : "No"),
                       style: TextStyle(
-                        color: Colors.indigo,
+                        color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
@@ -328,7 +335,7 @@ class _GearDataState extends State<GearData> {
                           "Dyeable: " +
                               ((snapshot.data.isDyeable == 1) ? "Yes" : "No"),
                           style: TextStyle(
-                            color: Colors.indigo,
+                            color: Colors.black,
                             fontSize: 20,
                           ),
                         ),
@@ -342,7 +349,7 @@ class _GearDataState extends State<GearData> {
                                   ? "Yes"
                                   : "No"),
                           style: TextStyle(
-                            color: Colors.indigo,
+                            color: Colors.black,
                             fontSize: 20,
                           ),
                         ),
@@ -356,7 +363,7 @@ class _GearDataState extends State<GearData> {
                       "Glamourable: " +
                           ((snapshot.data.isGlamourous == 1) ? "Yes" : "No"),
                       style: TextStyle(
-                        color: Colors.indigo,
+                        color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
@@ -370,7 +377,7 @@ class _GearDataState extends State<GearData> {
                               ? "Allowed"
                               : "Forbidden"),
                       style: TextStyle(
-                        color: Colors.indigo,
+                        color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
